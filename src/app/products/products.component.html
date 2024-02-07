@@ -1,0 +1,23 @@
+<p>products works!</p>
+<div class="w-6/12 mx-auto">
+    <input class="w-full mb-4" [(ngModel)]="serachterm" type="text" placeholder="search product" id="products" name="products">
+
+
+</div>
+<div class=" mx-auto  grid grid-cols-4 gap-2 overflow-hidden ">
+    <div  *ngFor="let product of products | search:serachterm" class="  group hover:border-2 border-rose-600 overflow-hidden " >
+        <a [routerLink]="['/productdetails',product._id]"   >
+
+        <img class="w-full" src={{product.imageCover}} alt="">
+        <div class="flex justify-between px-3 ">
+            <h2 class="text-right">{{product.title.split(' ').slice(0,2).join( ' ') | buy}}</h2>
+        <h4>{{product.price | currency :'EGP'}}</h4>
+        </div>
+
+    </a>
+    <button class="bg-green-500 text-center w-full text-white hidden   group-hover:block transition-all duration-1000 " >add to cart</button>
+
+        </div>
+
+
+</div> 

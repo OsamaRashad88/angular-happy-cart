@@ -1,0 +1,28 @@
+<p>productdetails works!</p>
+<div class=" flex justify-between w-9/12 mx-auto">
+    <div class="w-1/12">
+        <img  *ngFor="let image of productdetails?.images" src="{{image}}"  class="w-full hover:border-yellow-500"(click)='updateproduct(image)'>
+    </div>
+<div class="w-2/12">
+    <img src={{productimgsrc}} alt="" class="w-full">
+
+</div>
+    <div class="bg-green-500 w-9/12   ">
+   <div class="w-full text-center">
+    <h2  >{{productdetails?.title}}</h2>
+    <h2> {{productdetails?.category.name}}</h2>
+    <h2> {{productdetails?.price  | currency:'EGP' }} </h2>
+    <p>{{productdetails?.description}}</p>
+    <p>quantity:{{productdetails?.quantity}}</p>
+    <button class="bg-green-500 text-center w-full text-white " >add to cart</button>
+
+
+   </div>
+
+
+    </div>
+
+
+ 
+
+</div>
